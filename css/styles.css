@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../fonts/Segoe UI Italic.eot");
+  src: local("☺"), url("../fonts/Segoe UI Italic.woff") format("woff"), url("../fonts/Segoe UI Italic.ttf") format("truetype"), url("../fonts/Segoe UI Italic.svg") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../fonts/Segoe UI lite Italic.eot");
+  src: local("☺"), url("../fonts/Segoe UI lite Italic.woff") format("woff"), url("../fonts/Segoe UI lite Italic.ttf") format("truetype"), url("../fonts/Segoe UI lite Italic.svg") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Forum";
+  src: url("../fonts/Forum-Regular.eot");
+  src: local("☺"), url("../fonts/Forum-Regular.woff") format("woff"), url("../fonts/Forum-Regular.ttf") format("truetype"), url("../fonts/Forum-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/futura-pt-light.eot");
+  src: local("☺"), url("../fonts/futura-pt-light.woff") format("woff"), url("../fonts/futura-pt-light.ttf") format("truetype"), url("../fonts/futura-pt-light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT.eot");
+  src: local("☺"), url("../fonts/FuturaPT.woff") format("woff"), url("../fonts/FuturaPT.ttf") format("truetype"), url("../fonts/FuturaPT.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 0 11%;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1468px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992.98px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+.header {
+  height: 173px;
+}
+.header__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__column {
+  display: flex;
+  align-items: center;
+}
+.header__personal-area {
+  margin-right: 80px;
+}
+.header__burger {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  cursor: pointer;
+}
+.header__burger span {
+  top: 8px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+.header__burger span:first-child {
+  top: 0;
+}
+.header__burger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.logo {
+  max-width: 258px;
+}
+
+.personal-area {
+  display: flex;
+}
+.personal-area__column {
+  display: flex;
+  align-items: center;
+}
+.personal-area__column:not(:last-child) {
+  margin-right: 40px;
+}
+.personal-area__item {
+  display: flex;
+  align-items: center;
+}
+.personal-area__item span {
+  padding-left: 5px;
+  font-family: "Futura PT";
+  font-weight: 300;
+  font-size: 18px;
+}
+.personal-area__icon {
+  height: 20px;
+  max-width: 22px;
+}
+
+main {
+  flex: 1 1 auto;
+}

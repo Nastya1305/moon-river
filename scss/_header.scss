@@ -1,0 +1,75 @@
+.header {
+   height: 173px;
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__column {
+      display: flex;
+      align-items: center;
+   }
+
+   &__personal-area {
+      margin-right: 80px;
+   }
+
+   &__burger {
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+      span {
+         top: 8px;
+         left: 0;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #000;
+         &:first-child {
+            top: 0;
+         }
+         &:last-child {
+            top: auto;
+            bottom: 0;
+         }
+      }
+   }
+}
+
+.logo {
+   max-width: 258px;
+}
+
+.personal-area {
+   display: flex;
+
+   &__column {
+      display: flex;
+      align-items: center;
+   }
+
+   &__column:not(:last-child) {
+      margin-right: 40px;
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+
+      span {
+         padding-left: 5px;
+         font-family: "Futura PT";
+         font-weight: 300;
+         font-size: 18px;
+         // color: #ffffff;
+      }
+   }
+
+   &__icon {
+      height: 20px;
+      max-width: 22px;
+   }
+}
