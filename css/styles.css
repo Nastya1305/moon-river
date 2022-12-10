@@ -97,20 +97,20 @@ select {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .container {
-  max-width: 1438px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 11%;
   width: 100%;
   height: 100%;
 }
-@media (max-width: 1468px) {
+@media (max-width: 1470px) {
   .container {
     max-width: 970px;
   }
@@ -195,4 +195,144 @@ select {
 
 main {
   flex: 1 1 auto;
+}
+
+.first-screen {
+  min-height: 100vh;
+  position: relative;
+}
+.first-screen__body {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+.first-screen__body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 64%;
+  z-index: -10;
+  background-color: #272727;
+}
+.first-screen__collection {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.first-screen__title {
+  font-family: "Forum";
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: #272727;
+  margin-bottom: 50px;
+}
+.first-screen__subtitle {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #272727;
+  align-self: flex-end;
+  position: relative;
+}
+.first-screen__subtitle::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  top: 60%;
+  right: 120%;
+  background-color: #272727;
+}
+.first-screen__offer-img {
+  position: absolute;
+  top: 50%;
+  left: 64%;
+  transform: translate(-47%, -50%);
+  max-width: 322px;
+  max-height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.first-screen__column {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.first-screen__offer {
+  text-align: right;
+}
+
+.language {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.language a:not(:last-child) {
+  margin-right: 7px;
+}
+.language a {
+  color: #c4c4c4;
+}
+.language a.active {
+  color: #272727;
+}
+
+.offer > *:not(:last-child) {
+  margin-bottom: 9px;
+}
+.offer__name {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #272727;
+}
+.offer_white .offer__name {
+  color: #ffffff;
+}
+.offer__description {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #757575;
+}
+.offer_white .offer__description {
+  color: #c2c2c2;
+}
+.offer__price {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  color: #e2b67a;
+}
+.offer_white .offer__price {
+  color: #efc58b;
 }
