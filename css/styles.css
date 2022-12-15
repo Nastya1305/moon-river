@@ -110,6 +110,12 @@ select {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 5%;
+  }
+}
 
 .header {
   height: 173px;
@@ -182,22 +188,32 @@ main {
 }
 
 .first-screen {
-  min-height: 100vh;
   position: relative;
 }
 .first-screen__body {
   width: 100%;
-  height: 100vh;
+  height: 100vmin;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .first-screen__body {
+    height: 120vmin;
+  }
+}
+@media (max-width: 479.98px) {
+  .first-screen__body {
+    padding-bottom: 20px;
+  }
 }
 .first-screen__body::before {
   content: "";
   display: block;
   position: absolute;
-  height: 100vh;
+  height: 100vmin;
   width: 100vw;
   top: 0;
   left: 64%;
@@ -206,11 +222,13 @@ main {
 }
 @media (max-width: 767.98px) {
   .first-screen__body::before {
-    top: 50%;
-    left: 0;
+    top: 60%;
+    left: 50%;
+    height: 50%;
+    transform: translateX(-50%);
   }
 }
-.first-screen__collection {
+.first-screen .collection {
   width: 42%;
   display: flex;
   flex-direction: column;
@@ -221,49 +239,57 @@ main {
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
-  .first-screen__collection {
-    top: 20%;
-    width: 100%;
+  .first-screen .collection {
+    top: 30%;
+    width: auto;
+    max-width: 475px;
   }
 }
-.first-screen__title {
+.first-screen .collection__title {
   font-family: "Forum";
   font-weight: 400;
+  font-size: 64px;
   line-height: 1.1;
   letter-spacing: 0.03em;
   color: #272727;
-  margin-bottom: 10%;
+  margin-bottom: 0.8em;
 }
-@media (max-width: 767px) {
-  .first-screen__title {
-    font-size: calc(48px + 27.2 * ((100vw - 320px) / 1440));
+@media (max-width: 1440px) {
+  .first-screen .collection__title {
+    font-size: calc(0.025 * 100vw + 28px);
   }
 }
-@media (min-width: 767px) {
-  .first-screen__title {
-    font-size: calc(48px + 16 * (100vw / 1440));
+@media (max-width: 320px) {
+  .first-screen .collection__title {
+    font-size: 36px;
   }
 }
-.first-screen__subtitle {
+@media (max-width: 479.98px) {
+  .first-screen .collection__title {
+    margin-bottom: 15px;
+  }
+}
+.first-screen .collection__subtitle {
   font-family: "Segoe UI";
   font-style: italic;
   font-weight: 300;
+  font-size: 18px;
   line-height: 1.3;
   color: #272727;
   align-self: flex-end;
   position: relative;
 }
-@media (max-width: 767px) {
-  .first-screen__subtitle {
-    font-size: calc(14px + 6.8 * ((100vw - 320px) / 1440));
+@media (max-width: 1440px) {
+  .first-screen .collection__subtitle {
+    font-size: calc(0.0035714286 * 100vw + 12.8571428571px);
   }
 }
-@media (min-width: 767px) {
-  .first-screen__subtitle {
-    font-size: calc(14px + 4 * (100vw / 1440));
+@media (max-width: 320px) {
+  .first-screen .collection__subtitle {
+    font-size: 14px;
   }
 }
-.first-screen__subtitle::before {
+.first-screen .collection__subtitle::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -272,6 +298,31 @@ main {
   top: 60%;
   right: 120%;
   background-color: #272727;
+}
+@-webkit-keyframes HoverGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes HoverGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.first-screen .collection:hover * {
+  background: linear-gradient(90deg, #272727, #efc58b 10%, #e2b67a 20%, #272727 50%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-animation: HoverGradient 2s linear 1 normal forwards;
+          animation: HoverGradient 2s linear 1 normal forwards;
 }
 .first-screen__offer-img {
   position: absolute;
@@ -285,7 +336,7 @@ main {
 }
 @media (max-width: 767.98px) {
   .first-screen__offer-img {
-    top: 50%;
+    top: 60%;
     left: 50%;
   }
 }
@@ -296,6 +347,16 @@ main {
 }
 .first-screen__offer {
   text-align: right;
+}
+@media (max-width: 850px) {
+  .first-screen__offer {
+    width: 170px;
+  }
+}
+@media (max-width: 767.98px) {
+  .first-screen__offer {
+    width: auto;
+  }
 }
 
 .language {
@@ -313,12 +374,23 @@ main {
 .language a {
   color: #c4c4c4;
 }
+.language a:hover {
+  text-decoration: underline;
+}
 .language a.active {
   color: #272727;
 }
+@media (max-width: 767.98px) {
+  .language a.active {
+    color: #fff;
+  }
+}
 
 .offer > *:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 0.5em;
+}
+.offer:hover * {
+  text-decoration: underline;
 }
 .offer__name {
   font-family: "Futura PT";
@@ -329,6 +401,11 @@ main {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #272727;
+}
+@media (max-width: 479.98px) {
+  .offer__name {
+    font-size: 14px;
+  }
 }
 .offer_white .offer__name {
   color: #ffffff;
@@ -341,6 +418,11 @@ main {
   line-height: 1.3;
   color: #757575;
 }
+@media (max-width: 479.98px) {
+  .offer__description {
+    font-size: 16px;
+  }
+}
 .offer_white .offer__description {
   color: #c2c2c2;
 }
@@ -352,6 +434,11 @@ main {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: #e2b67a;
+}
+@media (max-width: 479.98px) {
+  .offer__price {
+    font-size: 16px;
+  }
 }
 .offer_white .offer__price {
   color: #efc58b;
