@@ -1,10 +1,19 @@
 .header {
    height: 173px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+
+   @media (max-width: $media2 + px) {
+      height: 150px;
+   }
 
    &__body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 100%;
    }
 
    &__column {
@@ -12,28 +21,34 @@
       align-items: center;
    }
 
-   &__personal-area {
-      margin-right: 80px;
-   }
-
    &__burger {
       position: relative;
       width: 30px;
       height: 18px;
+      margin-left: 80px;
+
       cursor: pointer;
+
+      @media (max-width: 1170px) {
+         margin-left: 50px;
+      }
+
       span {
          top: 8px;
          left: 0;
          position: absolute;
          width: 100%;
          height: 2px;
-         background-color: #000;
+         background-color: #fff;
          &:first-child {
             top: 0;
          }
          &:last-child {
             top: auto;
             bottom: 0;
+         }
+         @media (max-width: $media3 + px) {
+            background-color: #000;
          }
       }
    }
@@ -53,6 +68,10 @@
 
    &__column:not(:last-child) {
       margin-right: 40px;
+
+      @media (max-width: 1170px) {
+         margin-right: 30px;
+      }
    }
 
    &__item {
@@ -64,12 +83,21 @@
          font-family: "Futura PT";
          font-weight: 300;
          font-size: 18px;
-         // color: #ffffff;
+         color: #fff;
+
+         @media (max-width: $media3 + px) {
+            color: #000;
+         }
       }
    }
 
    &__icon {
       height: 20px;
       max-width: 22px;
+      fill: #fff;
+
+      @media (max-width: $media3 + px) {
+         fill: #000;
+      }
    }
 }
