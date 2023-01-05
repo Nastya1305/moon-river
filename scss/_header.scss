@@ -9,6 +9,14 @@
       height: 150px;
    }
 
+   @media (max-width: $media3 + px) {
+      height: 110px;
+   }
+
+   @media (max-width: $media4 + px) {
+      height: 80px;
+   }
+
    &__body {
       display: flex;
       justify-content: space-between;
@@ -19,6 +27,12 @@
    &__column {
       display: flex;
       align-items: center;
+   }
+
+   &__personal-area .personal-area__column {
+      @media (max-width: $media2 + px) {
+         display: none;
+      }
    }
 
    &__burger {
@@ -56,6 +70,11 @@
 
 .logo {
    max-width: 258px;
+   height: 50px;
+
+   @media (max-width: 550px) {
+      width: 190px;
+   }
 }
 
 .personal-area {

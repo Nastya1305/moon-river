@@ -73,6 +73,14 @@ main {
       }
 
       @media (max-width: $media4 + px) {
+         height: 150vmin;
+      }
+
+      @media (max-width: 550px) {
+         padding-bottom: 40px;
+      }
+
+      @media (max-width: $media4 + px) {
          padding-bottom: 20px;
       }
 
@@ -90,7 +98,7 @@ main {
          @media (max-width: $media3 + px) {
             top: 60%;
             left: 50%;
-            height: 50%;
+            height: 40%;
             transform: translateX(-50%);
          }
       }
