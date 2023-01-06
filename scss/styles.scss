@@ -35,17 +35,13 @@ $media4: 479.98;
 .container {
    max-width: $contentWidth + px;
    margin: 0 auto;
-   padding: 0 11%;
    width: 100%;
    height: 100%;
-   // @media (max-width: $media1 + px) {
-   //    max-width: 970px;
-   // }
-   // @media (max-width: $media2 + px) {
-   //    max-width: 750px;
-   // }
+}
+
+.container_padding {
+   padding: 0 11%;
    @media (max-width: $media3 + px) {
-      max-width: none;
       padding: 0 5%;
    }
 }
@@ -298,5 +294,101 @@ main {
 
    &_white &__price {
       color: #efc58b;
+   }
+}
+
+.sections {
+}
+
+.section-list {
+   display: flex;
+   flex-wrap: wrap;
+   height: auto;
+
+   padding: 1.3% 0 0.7%;
+   margin: 0 -0.7%;
+
+   &__row {
+      flex: 0 0 100%;
+      display: flex;
+      margin-bottom: 0.7%;
+   }
+
+   &__item {
+      margin: 0 0.7%;
+      flex: 0 1 50%;
+   }
+}
+
+.section-item {
+   position: relative;
+   max-height: 587px;
+   min-height: 200px;
+
+   img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+   }
+
+   &__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(39, 39, 39, 0.4);
+   }
+
+   &__text {
+      position: relative;
+
+      font-family: "Forum";
+      font-style: normal;
+      font-weight: 400;
+      @include adaptiv-font(64, 24);
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+
+      &::before {
+         position: absolute;
+         bottom: 100%;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 100%;
+         text-align: center;
+
+         content: "Перейти в раздел";
+         font-family: "Futura PT";
+         font-style: normal;
+         font-weight: 300;
+         @include adaptiv-font(24, 14);
+         line-height: 1.3;
+         color: #ffffff;
+      }
+
+      &::after {
+         position: absolute;
+         bottom: -23px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 40%;
+         height: 2px;
+
+         background-color: #ffffff;
+         content: "";
+      }
+   }
+
+   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+   &:hover {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+      transform: scale(1.006, 1.006);
    }
 }
