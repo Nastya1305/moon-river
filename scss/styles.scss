@@ -297,9 +297,6 @@ main {
    }
 }
 
-.sections {
-}
-
 .section-list {
    display: flex;
    flex-wrap: wrap;
@@ -311,11 +308,13 @@ main {
    &__row {
       flex: 0 0 100%;
       display: flex;
-      margin-bottom: 0.7%;
+      @media (max-width: $media4 + px) {
+         flex-direction: column;
+      }
    }
 
    &__item {
-      margin: 0 0.7%;
+      margin: 0 0.7% 0.7%;
       flex: 0 1 50%;
    }
 }
@@ -324,6 +323,10 @@ main {
    position: relative;
    max-height: 587px;
    min-height: 200px;
+
+   @media (max-width: $media4 + px) {
+      max-height: 70px;
+   }
 
    img {
       height: 100%;

@@ -522,10 +522,14 @@ main {
 .section-list__row {
   flex: 0 0 100%;
   display: flex;
-  margin-bottom: 0.7%;
+}
+@media (max-width: 479.98px) {
+  .section-list__row {
+    flex-direction: column;
+  }
 }
 .section-list__item {
-  margin: 0 0.7%;
+  margin: 0 0.7% 0.7%;
   flex: 0 1 50%;
 }
 
@@ -534,6 +538,11 @@ main {
   max-height: 587px;
   min-height: 200px;
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@media (max-width: 479.98px) {
+  .section-item {
+    max-height: 70px;
+  }
 }
 .section-item img {
   height: 100%;
