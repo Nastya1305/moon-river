@@ -3,6 +3,7 @@
    position: absolute;
    top: 0;
    left: 0;
+   z-index: ;
    width: 100%;
 
    @media (max-width: $media2 + px) {
@@ -83,6 +84,7 @@
    &__column {
       display: flex;
       align-items: center;
+      justify-content: center;
    }
 
    &__column:not(:last-child) {
@@ -96,6 +98,7 @@
    &__item {
       display: flex;
       align-items: center;
+      cursor: pointer;
 
       span {
          padding-left: 5px;
@@ -117,6 +120,10 @@
 
       @media (max-width: $media3 + px) {
          fill: #000;
+      }
+
+      &:hover {
+         fill: #efc58b;
       }
    }
 }

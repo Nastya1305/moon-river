@@ -124,6 +124,7 @@ select {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
 }
 @media (max-width: 992.98px) {
@@ -205,6 +206,7 @@ select {
 .personal-area__column {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .personal-area__column:not(:last-child) {
   margin-right: 40px;
@@ -217,6 +219,7 @@ select {
 .personal-area__item {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .personal-area__item span {
   padding-left: 5px;
@@ -239,6 +242,9 @@ select {
   .personal-area__icon {
     fill: #000;
   }
+}
+.personal-area__icon:hover {
+  fill: #efc58b;
 }
 
 main {
