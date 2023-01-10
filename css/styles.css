@@ -124,7 +124,7 @@ select {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   width: 100%;
 }
 @media (max-width: 992.98px) {
@@ -498,7 +498,7 @@ main {
   }
 }
 .offer_white .offer__description {
-  color: #c2c2c2;
+  color: #E7E7E7;
 }
 .offer__price {
   font-family: "Segoe UI";
@@ -625,4 +625,58 @@ main {
 .section-item:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   transform: scale(1.006, 1.006);
+}
+
+.offers__body {
+  display: grid;
+  grid-template-columns: 30% 1fr 30%;
+  grid-template-rows: 400px 400px;
+  grid-gap: 1.4%;
+}
+@media (max-width: 767.98px) {
+  .offers__body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 300px);
+  }
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #EDEDED;
+}
+.card_full {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+.card_full .card__img {
+  flex: 0 0 100%;
+}
+.card_full .card__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card_general {
+  padding: 20px 30px;
+}
+.card_general .card__img {
+  flex: 0 0 70%;
+}
+.card__img {
+  position: relative;
+}
+.card__img img {
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__offer {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
 }
