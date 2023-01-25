@@ -95,6 +95,13 @@ select {
   font: inherit;
 }
 
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100vh;
@@ -625,4 +632,178 @@ main {
 .section-item:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   transform: scale(1.006, 1.006);
+}
+
+.location {
+  background-color: #272727;
+  height: 604px;
+  position: relative;
+}
+@media (max-width: 992.98px) {
+  .location {
+    height: 400px;
+  }
+}
+@media (max-width: 767.98px) {
+  .location {
+    height: 500px;
+  }
+}
+.location__content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .location__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.location__search {
+  flex: 0 0 50%;
+  padding-right: 10%;
+}
+@media (max-width: 767.98px) {
+  .location__search {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.location__title {
+  width: 100%;
+  margin-bottom: 4%;
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+@media (max-width: 1440px) {
+  .location__title {
+    font-size: calc(0.025 * 100vw + 12px);
+  }
+}
+@media (max-width: 320px) {
+  .location__title {
+    font-size: 20px;
+  }
+}
+.location__subtitle {
+  margin-bottom: 16%;
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+@media (max-width: 1440px) {
+  .location__subtitle {
+    font-size: calc(0.0035714286 * 100vw + 12.8571428571px);
+  }
+}
+@media (max-width: 320px) {
+  .location__subtitle {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767.98px) {
+  .location__subtitle {
+    margin-bottom: 8%;
+  }
+}
+.location__map {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50vw;
+  height: 100%;
+}
+.location__map .hint {
+  min-width: 130px;
+  max-width: 170px;
+  display: inline-block;
+  padding: 10px;
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ffffff;
+  background: rgba(103, 103, 103, 0.9);
+  border-radius: 2px;
+}
+@media (max-width: 767.98px) {
+  .location__map {
+    left: 0;
+    top: 50%;
+    width: 100vw;
+    height: 250px;
+  }
+}
+
+[class*=ymaps-2][class*=-ground-pane] {
+  filter: invert(100%) contrast(90%) grayscale(100%);
+  -ms-filter: invert(100%) contrast(90%) grayscale(100%);
+  -webkit-filter: invert(100%) contrast(90%) grayscale(100%);
+  -moz-filter: invert(100%) contrast(90%) grayscale(100%);
+  -o-filter: invert(100%) contrast(90%) grayscale(100%);
+}
+
+.text-field {
+  position: relative;
+}
+.text-field__input {
+  display: block;
+  width: 100%;
+  height: 47px;
+  padding: 10px 45px 10px 0;
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 300;
+  font-size: inherit;
+  line-height: 1.3;
+  color: #fff;
+  background: transparent;
+  background-clip: padding-box;
+  border: 0;
+  border-bottom: 2px solid #fff;
+}
+.text-field__input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.text-field__input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.text-field__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.text-field__input:focus {
+  border-color: #e2b67a;
+}
+.text-field__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 47px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: right 1s ease;
+}
+.text-field__btn:hover {
+  right: -10px;
+}
+.text-field__icon {
+  display: block;
+  transform: scale(-1, 1);
+  width: 28px;
+  height: 100%;
+  fill: #fff;
 }

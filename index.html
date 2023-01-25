@@ -6,6 +6,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>MOON RIVER</title>
+   <script src="https://api-maps.yandex.ru/2.1/?apikey=3da63c7b-3849-41e9-a56f-c477948c78c2&lang=ru_RU"
+      type="text/javascript"></script>
    <link rel="icon" href="img/favicon-32x32.png">
    <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -113,12 +115,39 @@
                </div>
             </div>
          </section>
+
+
+         <section class="location">
+            <div class="container container_padding">
+               <div class="location__content">
+                  <div class="location__search">
+                     <h2 class="location__title">Найди<br> бутик около себя</h2>
+                     <div class="location__subtitle">Введите свой адрес и узнайте о самых ближайших бутиках к вам
+                     </div>
+                     <div class="text-field">
+                        <input id="suggest" class="text-field__input" type="text" placeholder="Введите адрес">
+                        <button class="text-field__btn" id="search-place-btn" type="button">
+                           <svg class="text-field__icon">
+                              <use href="img/icons-sprite.svg#arrow"></use>
+                           </svg>
+                        </button>
+                     </div>
+
+
+                  </div>
+                  <div class="location__map" id="map">
+                  </div>
+               </div>
+
+            </div>
+         </section>
+
       </main>
 
       <footer>footer</footer>
    </div>
 
-   <link href="js/script.js">
+   <script src="js/script.js"></script>
 </body>
 
 
