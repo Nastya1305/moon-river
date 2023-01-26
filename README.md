@@ -6,3 +6,4 @@
 * BEM
 
 ## [Figma design](https://www.figma.com/file/4zwJ5vHyzcH2YOJgi64qgL/Moon-River?node-id=0%3A1&t=MnLOvghlu5tSmhl4-0)
+[![design](https://github.com/Nastya1305/moon-river/blob/main/img/design.jpg)](https://nastya1305.github.io/moon-river/)
