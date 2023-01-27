@@ -98,17 +98,19 @@ function init() {
    function showNearestStore() {
       showAllMap();
 
-      var searchLocationResults = ymaps.geoQuery(ymaps.geocode(textField.value,
-         { results: 1, boundedBy: spbRect, strictBounds: true }))
-         // Нужно дождаться ответа от сервера и только потом обрабатывать полученные результаты.
-         .then(() => {
-            var result = myPlaces.getClosestTo(searchLocationResults.get(0));
-            myMap.setCenter(result.geometry.getCoordinates());
-            myMap.setZoom(14);
+      if (textField.value.trim().length != 0) {
+         var searchLocationResults = ymaps.geoQuery(ymaps.geocode(textField.value,
+            { results: 1, boundedBy: spbRect, strictBounds: true }))
+            // Нужно дождаться ответа от сервера и только потом обрабатывать полученные результаты.
+            .then(() => {
+               var result = myPlaces.getClosestTo(searchLocationResults.get(0));
+               myMap.setCenter(result.geometry.getCoordinates());
+               myMap.setZoom(14);
 
-            result.options.set('iconImageHref', 'img/location/map-pin-hovered.png');
-         }
-         );
+               result.options.set('iconImageHref', 'img/location/map-pin-hovered.png');
+            }
+            );
+      }
    }
 
    textField.addEventListener('keydown', function (e) {
