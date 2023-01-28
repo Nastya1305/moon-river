@@ -788,13 +788,13 @@ main {
   cursor: pointer;
   transition: right 1s ease;
 }
-.text-field__btn:hover {
-  right: -10px;
-}
 .text-field__icon {
   display: block;
   transform: scale(-1, 1);
   width: 28px;
   height: 100%;
   fill: #fff;
+}
+.text-field__btn:hover .text-field__icon {
+  fill: #e2b67a;
 }

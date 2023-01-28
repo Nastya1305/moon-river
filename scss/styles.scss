@@ -541,10 +541,6 @@ main {
       border: 0;
       cursor: pointer;
       transition: right 1s ease;
-
-      &:hover {
-         right: -10px;
-      }
    }
 
    &__icon {
@@ -553,5 +549,9 @@ main {
       width: 28px;
       height: 100%;
       fill: #fff;
+
+      .text-field__btn:hover & {
+         fill: #e2b67a;
+      }
    }
 }
