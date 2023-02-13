@@ -373,14 +373,6 @@ main {
   right: 120%;
   background-color: #272727;
 }
-@-webkit-keyframes HoverGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 @keyframes HoverGradient {
   0% {
     background-position: 0% 50%;
@@ -395,8 +387,7 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-animation: HoverGradient 2s linear 1 normal forwards;
-          animation: HoverGradient 2s linear 1 normal forwards;
+  animation: HoverGradient 2s linear 1 normal forwards;
 }
 .first-screen__offer-img {
   position: absolute;
@@ -498,7 +489,7 @@ main {
   }
 }
 .offer_white .offer__description {
-  color: #E7E7E7;
+  color: #e7e7e7;
 }
 .offer__price {
   font-family: "Segoe UI";
@@ -630,40 +621,71 @@ main {
 .offers__body {
   display: grid;
   grid-template-columns: 30% 1fr 30%;
-  grid-template-rows: 400px 400px;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 1.4%;
 }
 @media (max-width: 767.98px) {
   .offers__body {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 300px);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (max-width: 479.98px) {
+  .offers__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
   }
 }
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  background: #EDEDED;
+  background: #ededed;
 }
 .card_full {
+  position: relative;
   grid-column: 2/3;
   grid-row: 1/3;
 }
+@media (max-width: 479.98px) {
+  .card_full {
+    order: 3;
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
 .card_full .card__img {
-  flex: 0 0 100%;
+  height: 100%;
+  width: 100%;
 }
 .card_full .card__img img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.card_full .card__offer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 5% 7%;
 }
 .card_general {
-  padding: 20px 30px;
+  padding: 5% 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .card_general .card__img {
-  flex: 0 0 70%;
+  height: 200px;
+  margin-bottom: 8%;
+}
+@media (max-width: 479.98px) {
+  .card_general .card__img {
+    height: 120px;
+  }
 }
 .card__img {
   position: relative;
@@ -674,9 +696,4 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.card__offer {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
 }
