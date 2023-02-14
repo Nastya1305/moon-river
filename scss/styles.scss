@@ -484,6 +484,50 @@ main {
          border-radius: 2px;
       }
 
+      .balloon {
+         position: relative;
+
+         .content {
+            margin-top: 8px;
+         }
+
+         .close {
+            cursor: pointer;
+            position: absolute;
+            top: 12px;
+            right: 20px;
+
+            &::before,
+            &::after {
+               content: "";
+               position: absolute;
+               width: 15px;
+               height: 2px;
+               background: #c4c4c4;
+            }
+
+            &:before {
+               transform: rotate(45deg);
+            }
+            &:after {
+               transform: rotate(-45deg);
+            }
+         }
+
+         .tail {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(103, 103, 103, 0.9);
+         }
+      }
+
       @media (max-width: $media3 + px) {
          left: 0;
          top: 40%;

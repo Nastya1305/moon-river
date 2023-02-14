@@ -380,14 +380,6 @@ main {
   right: 120%;
   background-color: #272727;
 }
-@-webkit-keyframes HoverGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 @keyframes HoverGradient {
   0% {
     background-position: 0% 50%;
@@ -402,8 +394,7 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-animation: HoverGradient 2s linear 1 normal forwards;
-          animation: HoverGradient 2s linear 1 normal forwards;
+  animation: HoverGradient 2s linear 1 normal forwards;
 }
 .first-screen__offer-img {
   position: absolute;
@@ -729,6 +720,42 @@ main {
   background: rgba(103, 103, 103, 0.9);
   border-radius: 2px;
 }
+.location__map .balloon {
+  position: relative;
+}
+.location__map .balloon .content {
+  margin-top: 8px;
+}
+.location__map .balloon .close {
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+}
+.location__map .balloon .close::before, .location__map .balloon .close::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #c4c4c4;
+}
+.location__map .balloon .close:before {
+  transform: rotate(45deg);
+}
+.location__map .balloon .close:after {
+  transform: rotate(-45deg);
+}
+.location__map .balloon .tail {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(103, 103, 103, 0.9);
+}
 @media (max-width: 767.98px) {
   .location__map {
     left: 0;
@@ -766,9 +793,6 @@ main {
   border-bottom: 2px solid #fff;
 }
 .text-field__input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-.text-field__input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 .text-field__input::placeholder {
