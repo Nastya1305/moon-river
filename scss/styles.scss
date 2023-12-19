@@ -275,7 +275,7 @@ main {
    }
 
    &_white &__description {
-      color: #c2c2c2;
+      color: #e7e7e7;
    }
 
    &__price {
@@ -391,12 +391,15 @@ main {
    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
    &:hover {
-      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+      box-shadow:
+         0 8px 17px 0 rgba(0, 0, 0, 0.6),
+         0 6px 20px 0 rgba(0, 0, 0, 0.4);
       transform: scale(1.006, 1.006);
    }
 }
 
 .location {
+   margin-bottom: 1.4%;
    background-color: #272727;
    height: 604px;
    position: relative;
@@ -596,6 +599,110 @@ main {
 
       .text-field__btn:hover & {
          fill: #e2b67a;
+      }
+   }
+}
+
+.offers {
+   &__body {
+      display: grid;
+      grid-template-columns: 30% 1fr 30%;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+         "general-1 full general-2"
+         "general-3 full general-4";
+
+      grid-gap: 1.3vw;
+
+      @media (max-width: $media3 + px) {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: repeat(3, 1fr);
+         grid-template-areas:
+            "general-1 full"
+            "general-2 full"
+            "general-3 general-4";
+      }
+
+      @media (max-width: $media4 + px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
+         grid-template-areas:
+            "general-1"
+            "general-2"
+            "full"
+            "general-3"
+            "general-4";
+      }
+   }
+}
+
+.card {
+   cursor: pointer;
+   height: 100%;
+   background: #ededed;
+
+   &:hover &__offer *{
+      text-decoration: underline;
+   }
+
+   &_full {
+      position: relative;
+      grid-area: full;
+
+      .card__img {
+         height: 100%;
+         width: 100%;
+
+         img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: bottom;
+         }
+      }
+
+      .card__offer {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         z-index: 10;
+         width: 100%;
+         padding: 5% 7%;
+      }
+   }
+
+   &_general {
+      padding: 8% 7% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (max-width: $media4 + px) {
+         padding: 7% 10% 4%;
+      }
+
+      .card__img {
+         height: 200px;
+         margin: 0 5% 8%;
+         @media (max-width: $media3 + px) {
+            height: 160px;
+         }
+         @media (max-width: $media4 + px) {
+            margin: 0 0 6%;
+            height: 120px;
+         }
+      }
+   }
+
+   &__img {
+      position: relative;
+
+      img {
+         max-height: 100%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
       }
    }
 }

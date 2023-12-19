@@ -496,7 +496,7 @@ main {
   }
 }
 .offer_white .offer__description {
-  color: #c2c2c2;
+  color: #e7e7e7;
 }
 .offer__price {
   font-family: "Segoe UI";
@@ -626,6 +626,7 @@ main {
 }
 
 .location {
+  margin-bottom: 1.4%;
   background-color: #272727;
   height: 604px;
   position: relative;
@@ -821,4 +822,95 @@ main {
 }
 .text-field__btn:hover .text-field__icon {
   fill: #e2b67a;
+}
+
+.offers__body {
+  display: grid;
+  grid-template-columns: 30% 1fr 30%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "general-1 full general-2" "general-3 full general-4";
+  grid-gap: 1.3vw;
+}
+@media (max-width: 767.98px) {
+  .offers__body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "general-1 full" "general-2 full" "general-3 general-4";
+  }
+}
+@media (max-width: 479.98px) {
+  .offers__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
+    grid-template-areas: "general-1" "general-2" "full" "general-3" "general-4";
+  }
+}
+
+.card {
+  cursor: pointer;
+  height: 100%;
+  background: #ededed;
+}
+.card:hover .card__offer * {
+  text-decoration: underline;
+}
+.card_full {
+  position: relative;
+  grid-area: full;
+}
+.card_full .card__img {
+  height: 100%;
+  width: 100%;
+}
+.card_full .card__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.card_full .card__offer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 5% 7%;
+}
+.card_general {
+  padding: 8% 7% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 479.98px) {
+  .card_general {
+    padding: 7% 10% 4%;
+  }
+}
+.card_general .card__img {
+  height: 200px;
+  margin: 0 5% 8%;
+}
+@media (max-width: 767.98px) {
+  .card_general .card__img {
+    height: 160px;
+  }
+}
+@media (max-width: 479.98px) {
+  .card_general .card__img {
+    margin: 0 0 6%;
+    height: 120px;
+  }
+}
+.card__img {
+  position: relative;
+}
+.card__img img {
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
