@@ -622,35 +622,35 @@ main {
   display: grid;
   grid-template-columns: 30% 1fr 30%;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 1.4%;
+  grid-template-areas: "general-1 full general-2" "general-3 full general-4";
+  grid-gap: 1.3vw;
 }
 @media (max-width: 767.98px) {
   .offers__body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "general-1 full" "general-2 full" "general-3 general-4";
   }
 }
 @media (max-width: 479.98px) {
   .offers__body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
+    grid-template-areas: "general-1" "general-2" "full" "general-3" "general-4";
   }
 }
+
 .card {
+  cursor: pointer;
   height: 100%;
   background: #ededed;
 }
+.card:hover .card__offer * {
+  text-decoration: underline;
+}
 .card_full {
   position: relative;
-  grid-column: 2/3;
-  grid-row: 1/3;
-}
-@media (max-width: 479.98px) {
-  .card_full {
-    order: 3;
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
+  grid-area: full;
 }
 .card_full .card__img {
   height: 100%;
@@ -673,17 +673,28 @@ main {
   padding: 5% 7%;
 }
 .card_general {
-  padding: 5% 7%;
+  padding: 8% 7% 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 479.98px) {
+  .card_general {
+    padding: 7% 10% 4%;
+  }
+}
 .card_general .card__img {
   height: 200px;
-  margin-bottom: 8%;
+  margin: 0 5% 8%;
+}
+@media (max-width: 767.98px) {
+  .card_general .card__img {
+    height: 160px;
+  }
 }
 @media (max-width: 479.98px) {
   .card_general .card__img {
+    margin: 0 0 6%;
     height: 120px;
   }
 }
